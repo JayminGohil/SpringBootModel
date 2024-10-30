@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Display Mobiles</title>
+</head>
+<body>
+	<h1>All Mobiles</h1>
+	
+	<table border=1>
+	<tr>
+		<th>Id</th><th>Brand</th><th>Name</th><th>Name</th><th>Actions</th>
+	</tr>
+	<tr th:each="mob:${mobiles}">
+		<td th:text="${mob.id}"></td>
+		<td th:text="${mob.brand}"></td>
+		<td th:text="${mob.name}"></td>
+		<td th:text="${mob.price}"></td>
+		<td>
+			<a th:href="@{/delete/{id}(id=${mob.id})}">Delete</a><br>
+			<a th:href="@{/edit/{id}(id=${mob.id})}">Edit</a>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>
